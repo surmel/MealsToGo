@@ -28,21 +28,14 @@ const LoadingContainer = styled.View`
 `;
 
 export const RestaurantScreen = () => {
-  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+  const { restaurants, isLoading } = useContext(RestaurantsContext);
 
   return (
     <SafetyProvider>
       <SaveArea>
         {isLoading && (
-          <LoadingContainer
-            style={{ position: "absolute", top: "50%", left: "50%" }}
-          >
-            <Loading
-              size={50}
-              style={{ marginLeft: -25 }}
-              animating={true}
-              color="red"
-            />
+          <LoadingContainer>
+            <Loading size={50} animating={true} color="red" />
           </LoadingContainer>
         )}
         <Search />
